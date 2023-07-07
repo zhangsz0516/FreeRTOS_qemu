@@ -80,7 +80,7 @@ required UART registers. */
  * main_full() is used when mainCREATE_SIMPLE_BLINKY_DEMO_ONLY is set to 0.
  */
 extern void main_blinky( void );
-extern void main_full( void );
+//extern void main_full( void );
 
 /*
  * Only the comprehensive demo uses application hook (callback) functions.  See
@@ -108,15 +108,7 @@ void main( void )
 
 	/* The mainCREATE_SIMPLE_BLINKY_DEMO_ONLY setting is described at the top
 	of this file. */
-	#if ( mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 1 )
-	{
-		main_blinky();
-	}
-	#else
-	{
-		main_full();
-	}
-	#endif
+	main_blinky();
 }
 /*-----------------------------------------------------------*/
 
