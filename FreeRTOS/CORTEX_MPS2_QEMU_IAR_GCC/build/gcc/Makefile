@@ -1,16 +1,14 @@
 OUTPUT_DIR := ./output
 IMAGE := RTOSDemo.out
-SUB_MAKEFILE_DIR = ./library-makefiles
 
 # The directory that contains the /source and /demo sub directories.
-FREERTOS_ROOT = ./../../../../
+FREERTOS_ROOT = ./../../../
 CROSS_COMPILE = "/home/rtt/linux/tools/gcc-arm-none-eabi-10-2020-q4-major/bin/"
 
 CC = $(CROSS_COMPILE)arm-none-eabi-gcc
 LD = $(CROSS_COMPILE)arm-none-eabi-gcc
 SIZE = $(CROSS_COMPILE)arm-none-eabi-size
 MAKE = make
-
 
 CFLAGS += $(INCLUDE_DIRS) -nostartfiles -ffreestanding -mthumb -mcpu=cortex-m3 \
 		  -Wall -Wextra -g3 -O0 -ffunction-sections -fdata-sections \
@@ -34,7 +32,7 @@ SOURCE_FILES += $(KERNEL_DIR)/portable/MemMang/heap_4.c
 SOURCE_FILES += $(KERNEL_DIR)/portable/GCC/ARM_CM3/port.c
 
 
-DEMO_ROOT = $(FREERTOS_ROOT)/Demo
+DEMO_ROOT = $(FREERTOS_ROOT)
 
 #
 # Application entry point.  main_blinky is self contained.  main_full builds
