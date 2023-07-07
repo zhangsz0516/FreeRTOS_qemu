@@ -4,10 +4,11 @@ SUB_MAKEFILE_DIR = ./library-makefiles
 
 # The directory that contains the /source and /demo sub directories.
 FREERTOS_ROOT = ./../../../../
+CROSS_COMPILE = "/home/rtt/linux/tools/gcc-arm-none-eabi-10-2020-q4-major/bin/"
 
-CC = arm-none-eabi-gcc
-LD = arm-none-eabi-gcc
-SIZE = arm-none-eabi-size
+CC = $(CROSS_COMPILE)arm-none-eabi-gcc
+LD = $(CROSS_COMPILE)arm-none-eabi-gcc
+SIZE = $(CROSS_COMPILE)arm-none-eabi-size
 MAKE = make
 
 
@@ -33,7 +34,7 @@ SOURCE_FILES += $(KERNEL_DIR)/portable/MemMang/heap_4.c
 SOURCE_FILES += $(KERNEL_DIR)/portable/GCC/ARM_CM3/port.c
 
 #
-# Common demo files for the "full" build, as opposed to the "blinky" build - 
+# Common demo files for the "full" build, as opposed to the "blinky" build -
 # these files are build by all the FreeRTOS kernel demos.
 #
 DEMO_ROOT = $(FREERTOS_ROOT)/Demo
@@ -106,7 +107,7 @@ $(OUTPUT_DIR)/$(IMAGE): ./mps2_m3.ld $(OBJS_OUTPUT) Makefile
 	$(LD) $(OBJS_OUTPUT) $(CFLAGS) -Xlinker --gc-sections -Xlinker -T ./mps2_m3.ld \
 		-Xlinker -Map=$(OUTPUT_DIR)/RTOSDemo.map -specs=nano.specs \
 		-specs=nosys.specs -specs=rdimon.specs -o $(OUTPUT_DIR)/$(IMAGE)
-	$(SIZE) $(OUTPUT_DIR)/$(IMAGE)		
+	$(SIZE) $(OUTPUT_DIR)/$(IMAGE)
 
 $(DEP_OUTPUT):
 include $(wildcard $(DEP_OUTPUT))

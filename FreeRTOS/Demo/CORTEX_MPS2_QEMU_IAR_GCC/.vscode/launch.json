@@ -10,10 +10,11 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/gcc/output/RTOSDemo.out",
             "cwd": "${workspaceFolder}",
-            "miDebuggerPath": "/Applications/ARM/bin/arm-none-eabi-gdb-py",
+            //"miDebuggerPath": "/home/rtt/tools/gcc-arm-none-eabi-7-2018-q2-update/bin/arm-none-eabi-gdb-py",
+            "miDebuggerPath": "/home/rtt/linux/tools/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gdb-py",
             "miDebuggerServerAddress": "localhost:1234",
             "stopAtEntry": true,
-            "preLaunchTask": "Run QEMU"
+            //"preLaunchTask": "Run QEMU"
         }
     ]
 }

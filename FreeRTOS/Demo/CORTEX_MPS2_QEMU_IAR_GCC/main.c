@@ -104,6 +104,8 @@ void main( void )
 	/* Hardware initialisation.  printf() output uses the UART for IO. */
 	prvUARTInit();
 
+	printf( "\r\n\r\nFreeRTOS Runnig...\r\n" );
+
 	/* The mainCREATE_SIMPLE_BLINKY_DEMO_ONLY setting is described at the top
 	of this file. */
 	#if ( mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 1 )
