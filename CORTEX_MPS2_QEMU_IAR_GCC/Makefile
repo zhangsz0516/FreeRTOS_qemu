@@ -2,7 +2,7 @@ OUTPUT_DIR := ./output
 IMAGE := RTOSDemo.out
 
 # The directory that contains the /source and /demo sub directories.
-FREERTOS_ROOT = ./../../
+FREERTOS_ROOT = ./..
 CROSS_COMPILE = "/home/rtt/linux/tools/gcc-arm-none-eabi-10-2020-q4-major/bin/"
 
 CC = $(CROSS_COMPILE)arm-none-eabi-gcc
